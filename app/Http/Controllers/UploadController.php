@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class UploadController extends Controller
 {
     public function index(){
-       return view('Page.home');
+        return view('Form.upload');
     }
 }

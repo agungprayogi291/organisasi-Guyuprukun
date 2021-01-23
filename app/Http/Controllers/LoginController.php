@@ -11,7 +11,7 @@ class LoginController extends Controller
     }
     public function postLogin(Request $request){
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/home');
+            return redirect('/daftarMember');
         }
         return redirect('/login');
     }
