@@ -2,7 +2,9 @@
 @section('title','upload')
 @section('content-main')
     <div class="row m-auto">
-        <div class="col-md-12">
+   
+    
+        <div class="col-md-10 m-auto">
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">General</h3>
@@ -14,34 +16,38 @@
               </div>
             </div>
             <div class="card-body">
-              <div class="form-group">
-                <label for="inputName">Title</label>
-                <input type="text" id="inputName" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputDescription">description</label>
-                <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="inputStatus">Status</label>
-                <select id="inputStatus" class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option>Success</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="inputClientCompany">Date</label>
-                <input type="date" id="inputClientCompany" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputProjectLeader">img</label>
-                <input type="file" id="inputProjectLeader" class="form-control">
-              </div>
+            <form action="">
+                <div class="form-group">
+                  <label for="inputName">Title</label>
+                  <input type="text" id="inputName" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="inputDescription">description</label>
+                  <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="inputStatus">Status</label>
+                  <select id="inputStatus" class="form-control custom-select">
+                    <option selected disabled>Select one</option>
+                    <option>On Hold</option>
+                    <option>Canceled</option>
+                    <option>Success</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="inputClientCompany">Date</label>
+                  <input type="date" id="inputClientCompany" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="inputProjectLeader">img</label>
+                  <input type="file" id="inputProjectLeader" class="form-control">
+                </div>
+              <button class="btn btn-info">Upload</button>
+            </form>
             </div>
             <!-- /.card-body -->
           </div>
         </div>
+        
     </div>
 @endsection

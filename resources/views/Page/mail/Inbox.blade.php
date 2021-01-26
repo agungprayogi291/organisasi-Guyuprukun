@@ -1,5 +1,8 @@
 @extends('Template.dashboard')
 @section('title','GR| inbox')
+@section('header-title')
+  <h1>Inbox</h1>
+@endsection()
 @section('content-main')
 
 <section class="content">

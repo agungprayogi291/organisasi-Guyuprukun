@@ -1,5 +1,8 @@
 @extends('Template.dashboard')
 @section('title','GR|home-ketua')
+@section('header-title')
+  <h1>Daftar Anggota</h1>
+@endsection
 <!--
    content for page hoem admin
    extends template.dashboard  -->

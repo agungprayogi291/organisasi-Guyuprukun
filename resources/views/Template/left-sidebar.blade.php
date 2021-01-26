@@ -42,37 +42,17 @@
                 <p>Home</p>
             </a>
           </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-              Member
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-           
-        
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('daftarMember')}}" class="nav-link ">
+          <li class="nav-item">
+                <a href="{{route('daftarMember')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar Anggota</p>
+                  <p>Member</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('register')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Register</p>
-                </a>
-              </li>
-            </ul>
-          
           </li>
           <li class="nav-item menu-open">
            
             <ul class="nav nav-treeview ">
               <li class="nav-item ">
-                <a href="{{route('kalender')}}" class="nav-link ">
+                <a href="{{route('calender')}}" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>kalender</p>
                 </a>
@@ -86,7 +66,7 @@
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Daftar pencapaian</p>
+                  <p>Jadwal</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -114,7 +94,7 @@
             </a>
           </li>
           <li class="nav-item menu-close">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
              Keuangan
@@ -146,6 +126,12 @@
                   <p>Upload</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('inbox')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pesan</p>
+                </a>
+              </li>
             </ul>
           </li>
           @endif()
@@ -156,27 +142,27 @@
                 <p>Home</p>
             </a>
           </li>
+          <li class="nav-item">
+                <a href="{{route('daftarMember')}}" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Daftar Anggota</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('register')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Register</p>
+                </a>
+              </li>
           <li class="nav-item menu-close">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-             Laporan
+                reports
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Arisan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pesan</p>
-                </a>
-              </li>
               <li class="nav-item">
                 <a href="{{route('upload')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -184,6 +170,18 @@
                 </a>
               </li>
             </ul>
+            <li class="nav-item">
+                <a href="{{route('upload')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Upload</p>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="{{route('inbox')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pesan</p>
+                </a>
+              </li>
           </li>
           @endif
           @if(auth()->user()->level == "anggota")
@@ -206,7 +204,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('inbox')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
                 <p>pesan</p>
             </a>
