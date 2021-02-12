@@ -1,4 +1,4 @@
-@extends('Template.dashboard')
+@extends('layouts.app')
 @section('title','upload')
 @section('content-main')
     <div class="row m-auto">

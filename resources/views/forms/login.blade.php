@@ -26,7 +26,7 @@
       <p class="login-box-msg">Sign in to start your session</p>
 
       <form action="{{route('postLogin')}}" method="post">
-      {{csrf_field()}}
+      @csrf 
         <div class="input-group mb-3">
           <input type="email" class="form-control" name="email" placeholder="Email">
           <div class="input-group-append">
@@ -59,6 +59,6 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-@include('Template.script')
+@include('layouts.components.script')
 </body>
 </html>

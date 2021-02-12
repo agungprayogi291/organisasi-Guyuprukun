@@ -3,16 +3,16 @@
 <head>
  
   <title>GR | Calendar</title>
- @include('Template.Kalender.header')
+ @include('layouts.Kalender.header')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <!-- Navbar -->
- @include('Template.Kalender.navbar')
+ @include('layouts.Kalender.navbar')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-    @include('Template.Kalender.sidebar')
+    @include('layouts.Kalender.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -110,7 +110,7 @@
   </div>
   <!-- /.content-wrapper -->
 
- @include('Template.Kalender.footer')
+ @include('layouts.Kalender.footer')
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -120,6 +120,6 @@
 </div>
 <!-- ./wrapper -->
 
-@include('Template.Kalender.script')
+@include('layouts.Kalender.script')
 </body>
 </html>

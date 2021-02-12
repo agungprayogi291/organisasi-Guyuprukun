@@ -9,8 +9,11 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+   
     use HasFactory, Notifiable;
 
+   protected $table = "users";
+   protected $primaryKey = "id";
     /**
      * The attributes that are mass assignable.
      *
@@ -20,6 +23,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+		'level',
+		'phone',
+		'status',
+		'jkel',
+	
+		
     ];
 
     /**
@@ -40,4 +49,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+	public function activity (){
+		return $this->belongsTo(Activity::class,'users_id');
+	}
+
 }

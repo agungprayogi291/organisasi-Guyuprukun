@@ -5,7 +5,7 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class MemberController extends Controller
+class exampleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +28,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        return view('members.create');
+        return view('forms.register');
     }
 
     /**
@@ -39,15 +39,7 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|Email',
-            'level' => 'required',
-            'phone' => 'required',
-            'status' => 'required',
-            'jkel' => 'required',
-            'password' =>'required'
-        ]);
+        
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
@@ -58,16 +50,16 @@ class MemberController extends Controller
         $user->password = bcrypt($request->password);
         $user->remember_token = Str::random(60);
         $user->save();
-        return redirect('/member')->with('success_message','registrasi success');
+        return redirect('/exmple')->with('success_message','registrasi success');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
         //
     }
@@ -75,55 +67,34 @@ class MemberController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($user)
+    public function edit($id)
     {
-        $user = User::find($user);
-        $data = [
-            'user' =>$user
-        ];
-        return view('members.edit',$data);
-       
-    
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,  $user)
+    public function update(Request $request, $id)
     {
-        $user = User::find($user);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->level = $request->level;
-        $user->phone = $request->phone;
-        $user->status = $request->status;
-        $user->jkel = $request->jkel;
-        $user->save();
-        return redirect('/member')->with('success_message','registrasi success');
-     
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($user)
+    public function destroy($id)
     {
-        $user = User::find($user);
-   
-        $user->delete();
-        return redirect('/member');
-
-
+        //
     }
 }

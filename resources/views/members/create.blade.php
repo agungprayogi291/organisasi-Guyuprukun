@@ -1,7 +1,4 @@
-@extends('Template.dashboard')
-@section('left-sidebar')
-@include('Template.left-sidebar')
-@endsection
+@extends('layouts.app')
 @section('content-main')
 <div class="register-box m-auto">
   <div class="register-logo">
@@ -12,8 +9,8 @@
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register a new membership</p>
 
-      <form action="{{route('postregister')}}" method="post">
-      {{csrf_field()}}
+      <form action="/member" method="post">
+      @csrf 
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="name" placeholder="Full name">
           <div class="input-group-append">
@@ -32,6 +29,14 @@
         </div>
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="phone" placeholder="+62">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="status" placeholder="kawin/blm kawin">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>

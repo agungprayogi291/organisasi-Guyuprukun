@@ -1,4 +1,4 @@
-@extends('Template.dashboard')
+@extends('layouts.app')
 @section('title','GR|home-ketua')
 @section('header-title')
   <h1>Daftar Anggota</h1>
@@ -12,46 +12,48 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Guyuprukun anggota</h3>
-                <form action="{{route('register')}}"  style="float:right;" >
-                <button class="btn btn-success">registrasi</button></form>
+                <div style="float:right;">
+                <a href="/member/create" class="btn btn-success px-4 py-2">Register</a>
+                </div>
+               
             </div>
               <!-- /.card-header -->
            <div class="card-body">
+           @if(session()->has('success_message'))
+              <div class="mb-2 alert alert-success">{{session('success_message')}}</div>
+           @endif
               <table id="example2" class="table table-bordered table-hover ">
                 <thead>
                   <tr>
                     <th>Name</th>
                     <th>level</th>
                     <th>phone</th>
+                    <th>status</th>
                     <th>Jkel</th>
                     <th>email</th>
                     <th>aksi</th>
                   </tr>
                 </thead>
-                <tbody  >
+                <tbody>
                 @foreach($users as $user)
                   <tr >
-                    <td><?php echo $user->name ;?></td>
-                    <td><?php echo $user->level ;?></td>
-                    <td><?php echo $user->phone ;?></td>
-                    <td><?php echo $user->jkel ;?></td>
-                    <td><?php echo $user->email ;?> </td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->level}}</td>
+                    <td>{{$user->phone}}</td>
+                    <td>{{$user->status}}</td>
+                    <td>{{$user->jkel}}</td>
+                    <td>{{$user->email}}</td>
                     <td>
-                    <button class="btn btn-primary">reset</button><button class="btn btn-danger">delete</button>
+                      <a href="/member/{{$user->id}}/edit" class="btn btn-link text-info ">Edit</a>
+                      <form action="/member/{{$user->id}}" method="POST">
+                      @csrf 
+                      @method('DELETE')
+                        <button class="btn btn-link text-danger ">DELETE</button>
+                      </form>
                     </td>
-                @endforeach
                   </tr>
-                
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <th>Rendering engine</th>
-                      <th>Browser</th>
-                      <th>Platform(s)</th>
-                      <th>Engine version</th>
-                      <th>CSS grade</th>
-                    </tr>
-                  </tfoot>
+                @endforeach
+                </tbody>
               </table>
              </div>
               <!-- /.card-body -->

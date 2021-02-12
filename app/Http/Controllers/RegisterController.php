@@ -13,13 +13,14 @@ class RegisterController extends Controller
     public function register(Request $request){
         DB::table('users')->insert([
             'name' => $request->name,
+            'email' => $request->email,
             'level' => $request->level,
             'phone' => $request->phone,
+            'status' => $request->status,
             'jkel' => $request->jkel,
-            'email' => $request->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),
         ]);
-        return redirect()->route('daftarMember');
+        return redirect('/example');
     }
 }

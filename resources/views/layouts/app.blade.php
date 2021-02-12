@@ -7,17 +7,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="en">
 <head>
   <title>@yield('title')</title>
-  @include('Template.head')
+  @include('layouts.components.head')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
   <!-- Navbar -->
-  @include('Template.navbar')
+  @include('layouts.components.navbar')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-   @include('Template.left-sidebar');
+   @include('layouts.components.left-sidebar');
   
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -56,13 +56,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-@include('Template.footer')
+@include('layouts.components.footer')
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 
 <!-- script -->
-@include('Template.script')
+@include('layouts.components.script')
 </body>
 </html>

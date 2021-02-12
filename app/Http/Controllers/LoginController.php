@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     public function pageLogin(){
-        return view('Form.login');
+        return view('Forms.login');
     }
     public function postLogin(Request $request){
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/daftarMember');
+           
+            return redirect('/activity');
         }
         return redirect('/login');
     }
