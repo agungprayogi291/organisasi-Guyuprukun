@@ -1,8 +1,8 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar bg-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <!-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
-      <span class="brand-text font-weight-light">GuyupRukunSentul</span>
+      <span class="brand-text font-weight">GuyupRukunSentul</span>
     </a>
 
     <!-- Sidebar -->
@@ -13,7 +13,7 @@
           <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{auth()->user()->name}}</a>
+          <a href="#" class="d-block text-dark">{{auth()->user()->name}}</a>
         </div>
       </div>
 
@@ -38,14 +38,14 @@
           
           <li class="nav-item tombol  ">
             <a href="/member" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-                <p>Members</p>
+              <i class="far fa-circle nav-icon text-warning"></i>
+                <p class="text-white">Members</p>
             </a>
           </li>
           <li class="nav-item menu-close">
             <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
+              <i class="nav-icon fas fa-tachometer-alt text-danger"></i>
+              <p class="text-white">
                 Activites
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -53,33 +53,50 @@
             <ul class="nav nav-treeview tombol">
             <li class="nav-item">
                 <a href="/activity" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Activities</p>
+                  <i class="far fa-circle nav-icon text-dark"></i>
+                  <p class="text-white">Activities</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/activity/create" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Upload</p>
+                  <i class="far fa-circle nav-icon text-dark"></i>
+                  <p class="text-white ">Upload</p>
                 </a>
               </li>
             </ul>
-          <li class="nav-item tombol" >
-               <a href="" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>keuangan</p>
+		</li>
+          <li class="nav-item menu-close tombol" >
+               <a href="/kas" class="nav-link ">
+                  <i class="nav-icon fas fa-tachometer-alt text-dark"></i>
+                  <p class="text-white">keuangan</p>
+				    <i class="right fas fa-angle-left text-white"></i>
                 </a>
-              </li>
+				<ul class="nav nav-treeview tombol">
+				<li class="nav-item">
+					<a href="/kas" class="nav-link ">
+					  <i class="far fa-circle nav-icon text-dark"></i>
+					  <p class="text-white">Result</p>
+					</a>
+				  </li>
+				<li class="nav-item">
+					<a href="/kas/create" class="nav-link ">
+					  <i class="far fa-circle nav-icon text-dark"></i>
+					  <p class="text-white">data</p>
+					</a>
+				  </li>
+				  
+				</ul>
+            </li>
               <li class="nav-item tombol" >
                 <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Message</p>
+                  <i class="far fa-circle nav-icon text-success "></i>
+                  <p class="text-white">Message</p>
                 </a>
               </li>
             
-          <li class="nav-item bg-danger ">
+          <li class="nav-item bg-dark ">
                 <a href="{{route('logout')}}" class="nav-link" > 
-                  <p>Logout</p>
+                  <p class="text-white">Logout</p>
                 </a>
           </li>
         </ul>

@@ -52,7 +52,7 @@ class User extends Authenticatable
 
 
 	public function activity (){
-		return $this->belongsTo(Activity::class,'users_id');
+		return $this->belongsTo(Activity::class);
 	}
 
 }

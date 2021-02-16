@@ -20,6 +20,7 @@ Route::group(['middleware'=>['auth','ceklevel:ketua,bendahara,sekertaris,anggota
    
     Route::get('/data',[ActivityController::class,'data']);
     Route::resource('kas',KasController::class);
+	Route::post('/kas/seribusehari',[KasController::class,'seribusehari']);
 });
 
 
