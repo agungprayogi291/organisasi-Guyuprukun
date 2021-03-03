@@ -16,8 +16,12 @@ class KasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('keuangan.index');
+	{
+		$kas = TipeKas::all();
+		$data = [
+			'kas' => $kas
+		];
+        return view('keuangan.index',$data);
     }
 
     /**
@@ -95,10 +99,12 @@ class KasController extends Controller
 			'details' => $detail
 		];
 		
+		
 		return view('keuangan.show',$data);
 			
     }
-
+	
+	
     /**
      * Show the form for editing the specified resource.
      *

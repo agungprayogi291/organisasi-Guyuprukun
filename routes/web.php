@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\KasController;
+use App\Http\Controllers\MessageController;
 
 
 
@@ -14,13 +15,23 @@ Route::get('/login',[LoginController::class,'pageLogin'])->name('login');
 Route::post('/postLogin',[LoginController::class,'postLogin'])->name('postLogin');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
-Route::group(['middleware'=>['auth','ceklevel:ketua,bendahara,sekertaris,anggota']],function(){
+
+
+
+Route::middleware(['auth','ceklevel:ketua,bendahara,sekertaris,anggota'])->group(function(){
     Route::resource('activity',ActivityController::class);
-    Route::resource('member',MemberController::class);
-   
-    Route::get('/data',[ActivityController::class,'data']);
-    Route::resource('kas',KasController::class);
+	Route::resource('message',MessageController::class);
+});
+
+Route::middleware(['auth','ceklevel:sekertaris'])->group(function(){
+	Route::resource('kas',KasController::class)->only(['create','show','store']);
+	Route::resource('member',MemberController::class);
 	Route::post('/kas/seribusehari',[KasController::class,'seribusehari']);
+		
+});
+Route::middleware(['auth','ceklevel:ketua'])->group(function(){
+	Route::resource('kas',KasController::class)->only(['index']);
+	Route::resource('member',MemberController::class)->only(['index']);
 });
 
 

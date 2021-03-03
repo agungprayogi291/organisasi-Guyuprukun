@@ -35,14 +35,14 @@
           <!-- admin sdiebar navigasion
             extends Template.left-sidebar
             -->
-          
-          <li class="nav-item tombol  ">
+		@if(auth()->user()->level=="ketua")
+         <li class="nav-item tombol  ">
             <a href="/member" class="nav-link">
               <i class="far fa-circle nav-icon text-warning"></i>
                 <p class="text-white">Members</p>
             </a>
           </li>
-          <li class="nav-item menu-close">
+		   <li class="nav-item menu-close">
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt text-danger"></i>
               <p class="text-white">
@@ -65,7 +65,104 @@
               </li>
             </ul>
 		</li>
-          <li class="nav-item menu-close tombol" >
+		          <li class="nav-item menu-close tombol" >
+               <a href="/kas" class="nav-link ">
+                  <i class="nav-icon fas fa-tachometer-alt text-dark"></i>
+                  <p class="text-white">keuangan</p>
+				    <i class="right fas fa-angle-left text-white"></i>
+                </a>
+				<ul class="nav nav-treeview tombol">
+				<li class="nav-item">
+					<a href="/kas" class="nav-link ">
+					  <i class="far fa-circle nav-icon text-dark"></i>
+					  <p class="text-white">Result</p>
+					</a>
+				  </li>
+				</ul>
+            </li>
+			 <li class="nav-item tombol" >
+                <a href="/message" class="nav-link">
+                  <i class="far fa-circle nav-icon text-success "></i>
+                  <p class="text-white">Message</p>
+                </a>
+              </li>
+			       
+          <li class="nav-item bg-dark ">
+                <a href="{{route('logout')}}" class="nav-link" > 
+                  <p class="text-white">Logout</p>
+                </a>
+          </li>
+		@endif
+		
+		@if(auth()->user()->level=="sekertaris")
+		<li class="nav-item tombol  ">
+            <a href="/member" class="nav-link">
+              <i class="far fa-circle nav-icon text-warning"></i>
+                <p class="text-white">Members</p>
+            </a>
+         </li>
+		  <li class="nav-item menu-close">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fas fa-tachometer-alt text-danger"></i>
+              <p class="text-white">
+                Activites
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview tombol">
+            <li class="nav-item">
+                <a href="/activity" class="nav-link ">
+                  <i class="far fa-circle nav-icon text-dark"></i>
+                  <p class="text-white">Activities</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/activity/create" class="nav-link ">
+                  <i class="far fa-circle nav-icon text-dark"></i>
+                  <p class="text-white ">Upload</p>
+                </a>
+              </li>
+            </ul>
+		</li>
+		 <li class="nav-item tombol" >
+                <a href="/message" class="nav-link">
+                  <i class="far fa-circle nav-icon text-success "></i>
+                  <p class="text-white">Message</p>
+                </a>
+              </li>
+			       
+          <li class="nav-item bg-dark ">
+                <a href="{{route('logout')}}" class="nav-link" > 
+                  <p class="text-white">Logout</p>
+                </a>
+          </li>
+		@endif
+		
+		@if(auth()->user()->level=="bendahara")
+			 <li class="nav-item menu-close">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fas fa-tachometer-alt text-danger"></i>
+              <p class="text-white">
+                Activites
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview tombol">
+            <li class="nav-item">
+                <a href="/activity" class="nav-link ">
+                  <i class="far fa-circle nav-icon text-dark"></i>
+                  <p class="text-white">Activities</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/activity/create" class="nav-link ">
+                  <i class="far fa-circle nav-icon text-dark"></i>
+                  <p class="text-white ">Upload</p>
+                </a>
+              </li>
+            </ul>
+		</li>
+		          <li class="nav-item menu-close tombol" >
                <a href="/kas" class="nav-link ">
                   <i class="nav-icon fas fa-tachometer-alt text-dark"></i>
                   <p class="text-white">keuangan</p>
@@ -87,18 +184,62 @@
 				  
 				</ul>
             </li>
-              <li class="nav-item tombol" >
-                <a href="" class="nav-link">
+			 <li class="nav-item tombol" >
+                <a href="/message" class="nav-link">
                   <i class="far fa-circle nav-icon text-success "></i>
                   <p class="text-white">Message</p>
                 </a>
               </li>
-            
+			       
           <li class="nav-item bg-dark ">
                 <a href="{{route('logout')}}" class="nav-link" > 
                   <p class="text-white">Logout</p>
                 </a>
           </li>
+		@endif
+		
+		@if(auth()->user()->level=="anggota")
+			 <li class="nav-item menu-close">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fas fa-tachometer-alt text-danger"></i>
+              <p class="text-white">
+                Activites
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview tombol">
+            <li class="nav-item">
+                <a href="/activity" class="nav-link ">
+                  <i class="far fa-circle nav-icon text-dark"></i>
+                  <p class="text-white">Activities</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/activity/create" class="nav-link ">
+                  <i class="far fa-circle nav-icon text-dark"></i>
+                  <p class="text-white ">Upload</p>
+                </a>
+              </li>
+            </ul>
+		</li>
+		 <li class="nav-item tombol" >
+                <a href="/message" class="nav-link">
+                  <i class="far fa-circle nav-icon text-success "></i>
+                  <p class="text-white">Message</p>
+                </a>
+              </li>
+			       
+          <li class="nav-item bg-dark ">
+                <a href="{{route('logout')}}" class="nav-link" > 
+                  <p class="text-white">Logout</p>
+                </a>
+          </li>
+		@endif
+         
+         
+
+             
+       
         </ul>
     </nav>
       <!-- /.sidebar-menu -->

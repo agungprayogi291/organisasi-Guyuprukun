@@ -7,23 +7,12 @@
 @section('content-main')
 
     <div class="row p-4 m-auto ">
+	@foreach($kas as $k)
         <div class="card col-md-4 p-4" >
-            <h4>Kotak GuyupRukunPeduli</h4>
-                <h1>Rp 12.000.000</h1>
+            <h4>{{$k->name}}</h4>
+                <h1> {{$k->subtotal}}</h1>
         </div>
-        <div class="card col-md-4 p-4">
-            <h4>3M GuyupRukun</h4>
-                <h1>Rp 3.000.000</h1>
-        </div>
-        <div class="card col-md-4 p-4">
-            <h4>guyup rukun Sragam</h4>
-                <h1>Rp 8.000.000</h1>
-        </div>
-        <div class="card col-md-4 p-4">
-            <h4>GuyupRukun Refresing</h4>
-                <h1>Rp 30.000.000</h1>
-        </div>
-        
+       @endforeach
     </div>
 
 @endsection

@@ -8,6 +8,7 @@
 				<th>no</th>
 				<th>name</th>
 				<th>subtotal</th>
+				<th>date</th>
 			</tr>
 
 		</thead>
@@ -17,6 +18,7 @@
 				<td>{{$detail->id}}</td>
 				<td>{{$detail->name}}</td>
 				<td>{{$detail->subtotal}}</td>
+				<td>{{$detail->created_at}}</td>
 			</tr>
 		@endforeach
 		</tbody>

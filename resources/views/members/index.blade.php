@@ -12,10 +12,11 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Guyuprukun anggota</h3>
+				@if(auth()->user()->level=="sekertaris")
                 <div style="float:right;">
                 <a href="/member/create" class="btn btn-success px-4 py-2">Register</a>
                 </div>
-               
+               @endif
             </div>
               <!-- /.card-header -->
            <div class="card-body">

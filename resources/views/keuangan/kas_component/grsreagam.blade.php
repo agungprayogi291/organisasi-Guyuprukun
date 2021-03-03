@@ -27,21 +27,21 @@
 		<table class=" table mt-3 table-bordered table-hover">
 			<thead class="bg-dark">
 				<tr>
-					<th>no</th>
-					<th>Pengumpulan</th>
-					<th>total</th>
-					<th>data</th>
-					<th>saldo</th>
+					<th>No</th>
+					<th>Jenis</th>
+					<th>Subtotal</th>
+					<th>Detail</th>
 				</tr>
 			</thead>
 			<tbody>
+			@foreach($types as $type)
 				<tr>
-					<td>1</td>
-					<td>0</td>
-					<td>00,000</td>
-					<td>0/0/0</td>
-					<td>0</td>
+					<td></td>
+					<td>{{$type->name}}</td>
+					<td>{{$type->subtotal}}</td>
+					<td>{{$type->created_At}}</td>
 				</tr>
+			@endforeach
 			</tbody>
 		</table>
 	</div>
