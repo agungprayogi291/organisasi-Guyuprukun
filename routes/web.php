@@ -9,7 +9,9 @@ use App\Http\Controllers\KasController;
 use App\Http\Controllers\MessageController;
 
 
-
+Route::get('/',function(){
+	return view('welcome');
+});
 
 Route::get('/login',[LoginController::class,'pageLogin'])->name('login');
 Route::post('/postLogin',[LoginController::class,'postLogin'])->name('postLogin');
